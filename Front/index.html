@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chat Web App</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        #chat-box {
+            height: 400px;
+            overflow-y: scroll;
+            border: 1px solid #ddd;
+            padding: 10px;
+            margin-bottom: 20px;
+        }
+        #chat-input{
+            border-radius: 15px;
+            margin: 10px;
+        }
+        .message {
+            padding: 5px;
+            border-bottom: 1px solid #eee;
+        }
+        .titulo-chat{
+            background-color: #E0264D;
+            color: white;
+        }
+        .box-message{
+            background-color: #d9d9d9;
+        }
+    </style>
+</head>
+<body>
+    <div class="container mt-5">
+        <div class="row justify-content-center">
+            <div class="col-md-6">
+                <h1 class="text-center titulo-chat">Arca Express</h1>
+                <div id="chat-box" class="mb-3"></div>
+                <form id="chat-form">
+                    <div class="box-message">
+
+                        <div class="input-group">
+                            <input type="text" id="chat-input" class="form-control" placeholder="Escribe un mensaje...">
+                            <div class="input-group-append">
+                                <button class="btn btn-danger" type="submit">Enviar</button>
+                            </div>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+    <script src="chat.js"></script>
+</body>
+</html>

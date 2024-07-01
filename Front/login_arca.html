@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Inicio de sesión</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: white;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+
+        .container {
+            text-align: center;
+            background-color: white;
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            width: 300px;
+        }
+
+        .logo {
+            color: #E60A2E;
+            font-size: 24px;
+            font-weight: bold;
+            margin-bottom: 20px;
+        }
+
+        .input-group {
+            margin-bottom: 15px;
+        }
+
+        .input-group label {
+            display: block;
+            text-align: left;
+            margin-bottom: 5px;
+        }
+
+        .input-group input {
+            width: 100%;
+            padding: 8px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+
+        .btn {
+            background-color: #E60A2E;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+            border-radius: 4px;
+            cursor: pointer;
+            width: 100%;
+        }
+
+        .image-preview {
+            max-width: 200px;
+            max-height: 200px;
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <img src="arca.png" width="200" height="100">
+        
+        <form id="loginForm">
+
+            <div class="input-group">
+                <label for="usuario">Usuario</label>
+                <input type="text" id="usuario" name="usuario" required>
+            </div>
+            <div class="input-group">
+                <label for="contrasena">Contraseña</label>
+                <input type="password" id="contrasena" name="contraseña" required>
+            </div>
+            <button type="submit" class="btn">Iniciar</button>
+        </form>
+        
+    </div>
+
+    <script>
+        function previewImage(event) {
+            var input = event.target;
+            var preview = document.getElementById('image-preview');
+
+            if (input.files && input.files[0]) {
+                var reader = new FileReader();
+
+                reader.onload = function (e) {
+                    preview.src = e.target.result;
+                    preview.style.display = 'block';
+                };
+
+                reader.readAsDataURL(input.files[0]);
+            } else {
+                preview.src = '';
+                preview.style.display = 'none';
+            }
+        }
+        document.getElementById('loginForm').addEventListener('submit', function(event){
+            event.preventDefault();
+
+            window.location.href = 'index.html';
+        })
+    </script>
+</body>
+</html>
